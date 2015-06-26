@@ -1,6 +1,5 @@
 require 'uri'
 require 'active_support' #for deep_merge function
-require 'byebug'
 
 module Phase5
   class Params
@@ -13,10 +12,9 @@ module Phase5
     # passed in as a hash to `Params.new` as below:
     def initialize(req, route_params = {})
       req.query_string = "" if req.query_string.nil?
-      req.body = "" if req.body.nil?
+      req.body.nil? ? req_body = "": req_body = req.body
       @params = parse_www_encoded_form(req.query_string)
-      @params = @params.merge(parse_www_encoded_form(req.body))
-
+      @params = @params.merge(parse_www_encoded_form(req_body))
       @params = @params.merge(route_params)
     end
 
