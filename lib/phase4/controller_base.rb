@@ -4,19 +4,18 @@ require_relative './session'
 module Phase4
   class ControllerBase < Phase3::ControllerBase
     def redirect_to(url)
-      super
-      @session.store_session(@res)
+      super(url)
+      @session.store_session(@res) if @session
     end
 
     def render_content(content, content_type)
-      super
-      @session.store_session(@res)
+      super(content, content_type)
+      @session.store_session(@res) if @session
     end
 
     # method exposing a `Session` object
     def session
-      @session ||= Phase4::Session.new(@req)
-      #parse request, construct session from it
+      @session ||= Session.new(@req)
     end
   end
 end

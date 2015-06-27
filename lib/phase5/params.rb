@@ -3,13 +3,10 @@ require 'active_support' #for deep_merge function
 
 module Phase5
   class Params
-    # use your initialize to merge params from
+    # use initialize to merge params from
     # 1. query string
     # 2. post body
     # 3. route params
-    #
-    # You haven't done routing yet; but assume route params will be
-    # passed in as a hash to `Params.new` as below:
     def initialize(req, route_params = {})
       req.query_string = "" if req.query_string.nil?
       req.body.nil? ? req_body = "": req_body = req.body
