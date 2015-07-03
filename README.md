@@ -1,6 +1,13 @@
 # Rails Lite
 
-Rails Lite is a clone of Ruby on Rails basic functionality. Rails Lite utilizes Ruby metaprogramming, ERB template rendering library, WEBrick web-server, Regex
+Rails Lite is a clone of Ruby on Rails basic functionality. 
+
+
+## Primary Tools Used 
+* Ruby metaprogramming
+* ERB template rendering library
+* WEBrick web-server
+* Regex
 
 
 ## Features
@@ -10,8 +17,7 @@ Rails Lite is a clone of Ruby on Rails basic functionality. Rails Lite utilizes 
 * Params and query string parsing
 * Routing
 
-## Using The Specs
-## Suggested Order
+## Using The Specs (suggested order)
 
 0.  `bundle exec rspec spec/p02_controller_spec.rb`
 0.  `bundle exec rspec spec/p03_template_spec.rb`
